@@ -9,5 +9,5 @@ if z > 5:
      print(f'Last digit of {number} is {z} and is greater than 5')
 elif z == 0:
     print(f'last digit of {number} is {z} and is 0')
-else:
+elif z < 6 and z != 0:
     print(f'last digit of {number} is {z} and is less than 6 and not 0')
