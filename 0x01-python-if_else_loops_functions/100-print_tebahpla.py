@@ -1,5 +1,5 @@
 #!/usr/bin/python3
-in range(122, 96, -1):
+for i in range(122, 96, -1):
     if i % 2 == 0:
         n = chr(i)
     else:
