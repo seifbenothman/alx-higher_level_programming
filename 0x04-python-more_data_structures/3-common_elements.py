@@ -1,4 +1,3 @@
 #!/usr/bin/python3
 def common_elements(set_1, set_2):
-    common_elements = set1 & set2
-    return commen_elements
+    return set1 & set2
