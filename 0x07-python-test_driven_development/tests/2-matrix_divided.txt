@@ -1,0 +1,43 @@
+# Import the function to be tested
+>>> matrix_divided = __import__('2-matrix_divided').matrix_divided
+
+# Test Case 1: Divide all elements of the matrix by 3
+>>> matrix = [
+...     [1, 2, 3],
+...     [4, 5, 6]
+... ]
+>>> matrix_divided(matrix, 3)
+[[0.33, 0.67, 1.0], [1.33, 1.67, 2.0]]
+
+# Test Case 2: Divide all elements of the matrix by 2.5
+>>> matrix = [
+...     [10, 20, 30],
+...     [40, 50, 60]
+... ]
+>>> matrix_divided(matrix, 2.5)
+[[4.0, 8.0, 12.0], [16.0, 20.0, 24.0]]
+
+# Test Case 3: Divide a matrix with one row and one column by 7
+>>> matrix = [[7]]
+>>> matrix_divided(matrix, 7)
+[[1.0]]
+
+# Test Case 4: Divide a matrix by 0 (should raise ZeroDivisionError)
+>>> matrix = [
+...     [1, 2],
+...     [3, 4]
+... ]
+>>> matrix_divided(matrix, 0)
+Traceback (most recent call last):
+    ...
+ZeroDivisionError: division by zero
+
+# Test Case 5: Divide a matrix containing strings (should raise TypeError)
+>>> matrix = [
+...     [1, 2],
+...     [3, 'hello']
+... ]
+>>> matrix_divided(matrix, 2)
+Traceback (most recent call last):
+    ...
+TypeError: unsupported operand type(s) for /: 'str' and 'int'
