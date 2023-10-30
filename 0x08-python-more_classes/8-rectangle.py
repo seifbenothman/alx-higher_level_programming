@@ -45,14 +45,14 @@ class Rectangle:
         return 2 * (self.width + self.height)
 
     def __str__(self):
-        string = ""
+        total = ""
         if self.__height == 0 or self.width == 0:
-            return string
+            return total
         for i in range(self.__height):
-            string += (str(self.print_symbol) * self.__width)
+            total += (str(self.print_symbol) * self.__width)
             if i is not self.__height - 1:
-                string += "\n"
-        return string
+                total += "\n"
+        return total
 
     def __repr__(self):
         return f"Rectangle({self.width}, {self.height})"
@@ -70,3 +70,4 @@ class Rectangle:
         if rect_1.area() >= rect_2.area():
             return rect_1
         else:
+            return rect_2
