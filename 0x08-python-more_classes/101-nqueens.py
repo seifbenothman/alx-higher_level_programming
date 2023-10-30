@@ -52,4 +52,3 @@ if __name__ == "__main__":
                     print(chessboard)
                 else:
                     solve_nqueens(x + 1)
-
