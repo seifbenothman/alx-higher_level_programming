@@ -27,7 +27,10 @@ class Square(Rectangle):
         
         if args:
             for i, value in enumerate(args):
-                setattr(self, key, value)
+                setattr(self, attributes[i], value)
+            elif kwargs:
+                for key, value in kwargs.items():
+                    setattr(self, key, value)
 
         def to_dictionary(self):
             """Return the dictionary"""
