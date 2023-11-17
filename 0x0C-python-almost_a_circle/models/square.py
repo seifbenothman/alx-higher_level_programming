@@ -20,12 +20,14 @@ class Square(Rectangle):
         """Size attribute setter"""
         self.width = value
         self.height = value
-
-    def __str__(self):
-        """Return string"""
-        return "[Square] ({}) {}/{} - {}".format(
-                self.id, self.x, self.y, self.width
-                )
+    
+    def update(self, *args, **kwargs):
+        """Update attributes based on arguments and keyword arguments"""
+        attributes = ["id", "size", "x", "y"]
+        
+        if args:
+            for i, value in enumerate(args):
+                setattr(self, key, value)
 
         def to_dictionary(self):
             """Return the dictionary"""
@@ -35,3 +37,32 @@ class Square(Rectangle):
                 "x": self.x,
                 "y": self.y
                 }
+    def __str__(self):
+        """Return string"""
+        return "[Square] ({}) {}/{} - {}".format(
+                self.id, self.x, self.y, self.width
+                )
+    if __name__ == "__main__":
+        s1 = Square(5)
+        print(s1)
+
+        s1.update(10)
+        print(s1)
+
+        s1.update(1, 2)
+        print(s1)
+
+        s1.update(1, 2, 3)
+        print(s1)
+
+        s1.update(1, 2, 3, 4)
+        print(s1)
+
+        s1.update(x=12)
+        print(s1)
+        
+        s1.update(size=7, y=1)
+        print(s1)
+
+        s1.update(size=7, id=89, y=1)
+        print(s1)
