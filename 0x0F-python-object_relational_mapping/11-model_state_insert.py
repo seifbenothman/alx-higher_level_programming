@@ -1,9 +1,7 @@
 #!/usr/bin/python3
 """
-    A script that prints the State object with the name passed as an argument
-    from hbtn_0e_6_usa
-    Username, password, dbname and name to search
-    will be passed as arguments to the script.
+    A script that adds the State object 'Louisiana' to hbtn_0e_6_usa
+    Username, password, dbname will be passed as arguments to the script.
 """
 
 
@@ -23,12 +21,11 @@ if __name__ == '__main__':
 
     session = Session()
 
-    states = session.query(State) \
-            .filter(State.name == sys.argv[4]).one_or_none()
+    new_state = State(name='Louisiana')
+    session.add(new_state)
+    session.commit()
 
-    if states is None:
-        print("Not found")
-    else:
-        print(states.id)
+    state_add = session.query(State).filter(State.name == 'Louisiana').one()
+    print(state_add.id)
 
     session.close()
