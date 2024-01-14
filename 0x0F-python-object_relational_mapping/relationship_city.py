@@ -5,22 +5,17 @@
     Inherits from SQLAlchemy Base and links to the MySQL table cities
 """
 
-
-from sqlalchemy import Column, String, Integer
-from sqlalchemy.ext.declarative import declarative_base
-from sqlalchemy.orm import relationship
-
-Base = declarative_base()
+from sqlalchemy import Column, String, Integer, ForeignKey
+from relationship_state import Base
 
 
-class State(Base):
+class City(Base):
     """
-    An SQL table called states
+    An SQL table called cities
     """
-    __tablename__ = 'states'
+    __tablename__ = 'cities'
 
     id = Column(Integer, primary_key=True, nullable=False,
             unique=True, autoincrement=True)
     name = Column(String(128), nullable=False)
-    cities = relationship("City", backref="state",
-            cascade="all, delete-orphan")
+    state_id = Column(Integer, ForeignKey('states.id'), nullable=False)
