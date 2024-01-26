@@ -8,7 +8,7 @@ if __name__ == "__main__":
     url = f"https://api.github.com/repos/{user_repo}/commits"
 
     params = {'per_page': 10}
-    req = requests.get(url)
+    req = requests.get(url, params=params)
     data = req.json()
 
     for com in data:
