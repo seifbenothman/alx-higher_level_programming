@@ -3,7 +3,6 @@
 import requests
 import sys
 
-
 if __name__ == "__main__":
     user_repo = f"{sys.argv[2]}/{sys.argv[1]}"
     url = f"https://api.github.com/repos/{user_repo}/commits"
